@@ -1,0 +1,227 @@
+
+ body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(./backg.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+}
+@font-face {
+    font-family: 'venite';
+    src: url('./Venite\ Adoremus.otf') format('opentype');
+}
+@font-face {
+    
+    font-family: 'nexa';
+    src: url('./NexaRustSans-Trial-Black2.ttf') format('opentype');
+}
+.logo img{
+    height: 7rem;
+
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.about{
+    color: aliceblue;
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'nexa';
+   text-shadow: 0 0 20px rgba(0, 153, 255, 1), 0 0 30px rgba(0, 153, 255, 0.8), 0 0 40px rgba(0, 153, 255, 0.6);
+      
+}
+.coep{
+    font-size: 2.5rem;
+}
+:root {
+	--cards: 5;
+	--cardHeight: 87vh;
+	--cardTopPadding: 1.5em;
+	--cardMargin: 4vw;
+}
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+#cards {
+	list-style: none;
+	padding-left: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(var(--cards), var(--cardHeight));
+	gap: var(--cardMargin);
+	padding-bottom: calc(var(--cards) * var(--cardTopPadding));
+	margin-bottom: var(--cardMargin);
+}
+
+#card1 {
+	--index: 1;
+}
+#card2 {
+	--index: 2;
+}
+#card3 {
+	--index: 3;
+}
+#card4 {
+	--index: 4;
+}
+#card5 {
+	--index: 5;
+}
+
+.card {
+	position: sticky;
+	top: 0;
+	padding-top: calc(var(--index) * var(--cardTopPadding));
+}
+
+
+.coep{
+     font-family: 'venite';
+     text-decoration: underline;
+     
+}
+.text{
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:100;
+    align-content: left;
+   font-size: 1.5rem;
+}
+.big{
+    display: flex;
+    gap: 80px;
+    font-size: 1.3rem;
+}
+.pic{
+    border: 2px solid white;
+    height: 16rem;
+    width: 18rem;
+    object-fit: cover;
+}
+.pic img {
+  
+    object-fit: cover; /* Adjust the image to cover the container */
+}
+#card1 .card-body {
+    /* background: linear-gradient(90deg, #383be5, #8a2be2, #c02be2); */
+    /* background-size: 300% 300%;  */
+    backdrop-filter: blur(5px);
+    background-color: black;
+    
+  }
+#card2 .card-body {
+	/* background-color: #7EC4CF; */
+	backdrop-filter: blur(15px);
+    background-color: black;
+
+}
+#card3 .card-body {
+	backdrop-filter: blur(15px);
+    background-color: black;
+
+}
+#card4 .card-body {
+	backdrop-filter: blur(15px);
+    background-color: black;
+
+}
+#card5 .card-body {
+	backdrop-filter: blur(15px);
+    background-color: black;
+
+}
+
+.card-body {
+	box-sizing: border-box;
+	padding: 30px;
+  border: 1px solid white;
+	border-radius: 10px;
+	box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
+	height: var(--cardHeight);
+	/* display: flex;
+	justify-content: center;
+	align-items: center; */
+    color: azure;
+	transition: all 0.5s;
+    overflow: auto;
+    text-align: center;
+
+}
+.futura{
+    color: aliceblue;
+    font-size: 2.5rem;
+    font-family:Arial, Helvetica, sans-serif;
+    font-family: 'nexa';
+}
+h2 {
+	font-size: 2.5em;
+}
+.box{
+    height:auto;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+align-self: center;
+box-shadow: 0 0 25px 10px rgba(0, 0, 255, 1);
+}
+.date{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.parent {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+   
+}
+@media (max-width: 961px) {
+	.coep{
+        font-size: 2.3rem;
+    }
+    .text{
+        font-size:1.3rem;
+    }
+}
+@media (max-width: 665px) {
+	.coep{
+        font-size: 2rem;
+    }
+    .text{
+        font-size:1.1rem;
+    }
+}
+@media (max-width: 459px) {
+	.card-body {
+		padding: 15px; /* Adjust padding for smaller screens */
+	}
+}
+@media(max-width:721px){
+    .logo img{
+        height: 5rem;
+    
+    }
+    .about{
+        font-size: 2.3rem;
+    }
+}
+@media(max-width:447px){
+    .logo img{
+        height: 4rem;
+    
+    }
+    .about{
+        font-size: 2rem;
+    }
+}
