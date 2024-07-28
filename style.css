@@ -11,7 +11,84 @@
     margin: 0;
     padding: 0;
     background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+body {
+    background-color: black;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    place-content: center;
+}
+
+.logo-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(14, 14, 14);
+    position: relative;
+}
+
+.loader img{
+    width:100%;
+}
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.logo-container::after, .logo-container::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-image: conic-gradient(from var(--angle), transparent 65%, cyan, rgb(2, 138, 236));
+    padding: 5px;
+    border-radius: 50%;
+    animation: 3s spin linear infinite;
+    z-index: -1;
+}
+
+.logo-container::before {
+    filter: blur(1.5rem);
+    opacity: 0.8;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
+
+.loader{
+    animation: pulse 1.5s ease infinite;
+    box-shadow: 5px;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 @font-face {
     font-family: 'venite';
     src: url('./Venite\ Adoremus.otf') format('opentype');
@@ -22,7 +99,7 @@
     src: url('./NexaRustSans-Trial-Black2.ttf') format('opentype');
 }
 .logo img{
-    height: 7rem;
+    height: 13rem;
 
 }
 .logo{
@@ -165,6 +242,55 @@
     font-family:Arial, Helvetica, sans-serif;
     font-family: 'nexa';
 }
+.btn-14 {
+    position: relative;
+    color: white;
+    border: none;
+    z-index: 2;
+    height: 4rem;
+    background-color: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 20px;
+  }
+  .btn-14:before,
+  .btn-14:after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    border: 1px solid;
+    
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+  .btn-14:before{
+     top: 0;
+     left: 0;
+     border-bottom-color: transparent;
+     border-right-color: transparent;
+     border-top-color: #00aced;
+     border-left-color: #00aced;
+  }
+  .btn-14:after{
+     bottom: 0;
+     right: 0;
+     border-top-color: transparent;
+     border-left-color: transparent;
+     border-bottom-color: #00aced;
+     border-right-color: #00aced;
+  }
+  .btn-14:hover:before,
+  .btn-14:hover:after {
+    border-color: #00aced;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 5px #00aced, 0 0 5px #00aced inset;
+  }
+  
+  
+  
 h2 {
 	font-size: 2.5em;
 }
@@ -179,6 +305,7 @@ box-shadow: 0 0 25px 10px rgba(0, 0, 255, 1);
 }
 .date{
     font-family: Arial, Helvetica, sans-serif;
+    margin-top: 4rem;
 }
 .parent {
     display: flex;
@@ -209,7 +336,7 @@ box-shadow: 0 0 25px 10px rgba(0, 0, 255, 1);
 }
 @media(max-width:721px){
     .logo img{
-        height: 5rem;
+        height: 10rem;
     
     }
     .about{
@@ -218,7 +345,7 @@ box-shadow: 0 0 25px 10px rgba(0, 0, 255, 1);
 }
 @media(max-width:447px){
     .logo img{
-        height: 4rem;
+        height: 7rem;
     
     }
     .about{
